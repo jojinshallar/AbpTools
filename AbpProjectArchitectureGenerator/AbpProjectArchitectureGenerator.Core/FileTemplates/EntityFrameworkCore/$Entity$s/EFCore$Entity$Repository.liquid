@@ -1,0 +1,15 @@
+{{- if model.includelocalusing -}}
+using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class EFCore{{ model.entityname }}Repository : EfCoreRepository<{{model.entityname}}DbContext, {{model.entityname}}, {{ model.idtype }}>,  I{{ model.entityname }}Repository
+    {
+        public EFCore{{ model.entityname }}Repository(IDbContextProvider<{{ model.entityname }}DbContext> dbContextProvider) : base(dbContextProvider)
+        {
+        }
+    }
+}

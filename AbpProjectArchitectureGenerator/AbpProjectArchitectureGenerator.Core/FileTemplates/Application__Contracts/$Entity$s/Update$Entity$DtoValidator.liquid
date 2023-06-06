@@ -1,0 +1,15 @@
+{{- if model.includelocalusing -}}
+using FluentValidation;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class Update{{ model.entityname }}DtoValidator : AbstractValidator<Update{{ model.entityname }}Dto> 
+    {
+        public Update{{ model.entityname }}DtoValidator()
+        {
+
+        }
+    }
+}

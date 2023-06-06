@@ -1,0 +1,12 @@
+{{- if model.includelocalusing -}}
+using Volo.Abp.Domain.Repositories;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public interface I{{ model.entityname }}Repository : IRepository<{{model.entityname}}, {{ model.idtype }}>
+    {
+
+    }
+}

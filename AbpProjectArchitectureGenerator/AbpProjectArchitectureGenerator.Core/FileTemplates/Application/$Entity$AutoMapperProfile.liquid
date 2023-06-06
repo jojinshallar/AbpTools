@@ -1,0 +1,19 @@
+﻿{{- if model.includelocalusing -}}
+using AutoMapper;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class {{ model.entityname }}AutoMapperProfile : Profile
+    {
+        public {{ model.entityname }}AutoMapperProfile()
+        {
+            CreateMap<{{ model.entityname }}, {{ model.entityname }}Dto>().ReverseMap();
+            CreateMap<{{ model.entityname }}Dto, Create{{ model.entityname }}Dto>();
+            CreateMap<{{ model.entityname }}Dto, Update{{ model.entityname }}Dto>();
+            CreateMap<Create{{ model.entityname }}Dto, {{ model.entityname }}>();
+            CreateMap<Update{{ model.entityname }}Dto, {{ model.entityname }}>();
+        }
+    }
+}

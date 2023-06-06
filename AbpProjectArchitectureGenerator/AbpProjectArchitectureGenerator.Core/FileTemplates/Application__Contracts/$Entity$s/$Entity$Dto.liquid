@@ -1,0 +1,12 @@
+{{- if model.includelocalusing -}}
+using Volo.Abp.Application.Dtos;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class {{ model.entityname }}Dto : FullAuditedEntityDto<{{ model.idtype }}>
+    {
+
+    }
+}

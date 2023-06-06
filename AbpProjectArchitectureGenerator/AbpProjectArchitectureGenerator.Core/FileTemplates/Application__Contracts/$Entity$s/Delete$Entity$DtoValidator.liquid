@@ -1,0 +1,15 @@
+{{- if model.includelocalusing -}}
+using FluentValidation;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class Delete{{ model.entityname }}DtoValidator : AbstractValidator<Delete{{ model.entityname }}Dto> 
+    {
+        public Delete{{ model.entityname }}DtoValidator()
+        {
+
+        }
+    }
+}

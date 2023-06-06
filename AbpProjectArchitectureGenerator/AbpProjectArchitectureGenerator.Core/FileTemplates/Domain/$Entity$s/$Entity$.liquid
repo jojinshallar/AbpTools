@@ -1,0 +1,12 @@
+{{- if model.includelocalusing -}}
+using Volo.Abp.Domain.Entities.Auditing;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class {{ model.entityname }} : FullAuditedAggregateRoot<{{ model.idtype }}>
+    {
+
+    }
+}

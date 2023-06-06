@@ -1,0 +1,25 @@
+{{- if model.includelocalusing -}}
+using Microsoft.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class {{ model.entityname }}DbContext : AbpDbContext<{{model.entityname}}DbContext>
+    {
+        public DbSet<{{ model.entityname }}> {{ model.entityname }}s { get; set; }
+        public {{ model.entityname }}DbContext(DbContextOptions<{{ model.entityname }}DbContext> options) : base(options)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<{{ model.entityname }}>(b =>
+            {
+                b.ToTable("{{ model.entityname }}s");
+            });
+        }
+    }
+}

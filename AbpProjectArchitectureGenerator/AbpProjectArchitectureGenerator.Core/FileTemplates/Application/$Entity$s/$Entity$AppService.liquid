@@ -1,0 +1,20 @@
+{{- if model.includelocalusing -}}
+using Microsoft.Extensions.Logging;
+using Volo.Abp.Application.Services;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.{{ model.entityname }}s
+{
+    public class {{ model.entityname }}AppService : ApplicationService, I{{ model.entityname }}AppService
+    {
+        private readonly ILogger<{{ model.entityname }}AppService> _logger;
+        private readonly IPhoneRepository _repository;
+
+        public {{ model.entityname }}AppService(ILogger<{{ model.entityname }}AppService> logger, I{{ model.entityname }}Repository repository)
+        {
+            _logger = logger;
+            _repository = repository;
+        }
+    }
+}

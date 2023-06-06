@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\$Entity$Dto.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Create$Entity$Dto.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Create$Entity$DtoValidator.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Delete$Entity$Dto.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Delete$Entity$DtoValidator.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Get$Entity$ListDto.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Get$Entity$ListDtoValidator.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\I$Entity$AppService.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Update$Entity$Dto.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application__Contracts\$Entity$s\Update$Entity$DtoValidator.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application\$Entity$AutoMapperProfile.liquid" />
+    <EmbeddedResource Include="FileTemplates\Application\$Entity$s\$Entity$AppService.liquid" />
+    <EmbeddedResource Include="FileTemplates\Domain\$Entity$s\$Entity$.liquid" />
+    <EmbeddedResource Include="FileTemplates\Domain\$Entity$s\I$Entity$Repository.liquid" />
+    <EmbeddedResource Include="FileTemplates\EntityFrameworkCore\$Entity$s\EFCore$Entity$Repository.liquid" />
+    <EmbeddedResource Include="FileTemplates\EntityFrameworkCore\$Entity$DbContext.liquid" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Scriban" Version="5.6.0" />
+  </ItemGroup>
+
+</Project>
