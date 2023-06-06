@@ -38,4 +38,4 @@ dotnet publish -c Release -r [runtime identifier] /p:PublishSingleFile=true /p:P
 AbpPAG --pjname ABC.EShop --entityname Phone --output "C:\ProjectFiles" --idtype string
 ```
 *生成的文件和文件夹如下图：*  
-![alt 生成图片](https://github.com/jojinshallar/MasaTool/blob/master/Images/AbpPAGFolderSample.png)
+![alt 生成图片](https://github.com/jojinshallar/AbpTools/blob/master/Images/AbpPAGFolderSample.png)
